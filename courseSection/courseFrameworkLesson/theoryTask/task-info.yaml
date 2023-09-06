@@ -1,0 +1,6 @@
+type: theory
+files:
+  - name: src/org/jetbrains/academy/kotlin/template/Main.kt
+    visible: true
+  - name: src/org/jetbrains/academy/kotlin/template/InvisibleFile.kt
+    visible: false

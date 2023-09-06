@@ -1,0 +1,7 @@
+type: theory
+custom_name: Course theory task
+files:
+  - name: src/main/kotlin/org/jetbrains/academy/kotlin/template/Main.kt
+    visible: true
+  - name: src/main/kotlin/org/jetbrains/academy/kotlin/template/InvisibleFile.kt
+    visible: false

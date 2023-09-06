@@ -1,0 +1,5 @@
+custom_name: Course lesson
+content:
+  - theoryTask
+  - quizTask
+  - programmingTask

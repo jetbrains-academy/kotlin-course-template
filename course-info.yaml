@@ -1,0 +1,9 @@
+type: marketplace
+title: JetBrains Academy Kotlin course template
+language: English
+summary: TODO
+programming_language: Kotlin
+content:
+  - courseSection
+environment_settings:
+  jvm_language_level: JDK_17

@@ -1,0 +1,12 @@
+type: edu
+files:
+  - name: src/org/jetbrains/academy/kotlin/template/Main.kt
+    visible: true
+  - name: src/org/jetbrains/academy/kotlin/template/InvisibleFile.kt
+    visible: false
+  - name: test/InvokeSayByeFunction.kt
+    visible: false
+  - name: test/MainClass.kt
+    visible: false
+  - name: test/Tests.kt
+    visible: false

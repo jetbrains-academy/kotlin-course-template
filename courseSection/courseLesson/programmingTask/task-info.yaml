@@ -1,0 +1,20 @@
+type: edu
+custom_name: Course programming task
+files:
+  - name: test/Tests.kt
+    visible: false
+  - name: src/main/kotlin/org/jetbrains/academy/kotlin/template/Main.kt
+    visible: true
+    placeholders:
+      - offset: 95
+        length: 81
+        placeholder_text: TODO("Write your solution here")
+      - offset: 193
+        length: 133
+        placeholder_text:  // Write your solution here
+  - name: src/main/kotlin/org/jetbrains/academy/kotlin/template/InvisibleFile.kt
+    visible: false
+  - name: test/InvokeSayHelloFunction.kt
+    visible: false
+  - name: test/MainClass.kt
+    visible: false
