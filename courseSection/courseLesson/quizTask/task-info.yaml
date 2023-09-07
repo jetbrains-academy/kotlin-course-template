@@ -10,4 +10,3 @@ files:
   - name: src/main/kotlin/org/jetbrains/academy/kotlin/template/Main.kt
     visible: true
 custom_name: Course quiz task
-local_check: true

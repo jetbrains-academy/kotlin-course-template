@@ -266,7 +266,7 @@ In the `.github/workflows` directory, you can find definitions for the following
 
 [semver]: https://semver.org
 
-[file:use-this-template.png]: ./readme/get-from-version-control.png
-[file:course-structure-author]: ./readme/course-structure-author.png
-[file:course-structure-student]: ./readme/course-structure-student.png
-[file:run-debug-configurations]: ./readme/run-debug-configurations.png
+[file:use-this-template.png]: common/src/main/resources/images/get-from-version-control.png
+[file:course-structure-author]: common/src/main/resources/images/course-structure-author.png
+[file:course-structure-student]: common/src/main/resources/images/course-structure-student.png
+[file:run-debug-configurations]: common/src/main/resources/images/run-debug-configurations.png
