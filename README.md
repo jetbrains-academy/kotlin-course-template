@@ -95,7 +95,23 @@ A generated JetBrains Academy Kotlin Course Template repository contains the fol
 │           └── resources/      Resources - images, icons
 ├── courseSection/              An example of the course section 
 │   ├── courseLesson/           An example if the course lesson
-│   │   ├── ...                 Several examples of lessons
+│   │   ├── theoryTask/         An example of a theory task
+│   │   │   ├── src/            Task sources
+│   │   │   │   └── ...            
+│   │   │   ├── task.md         Task/theory description
+│   │   │   └── task-info.yaml  Task config file
+│   │   ├── quizTask/           An example of a quiz task
+│   │   │   ├── src/            Task sources
+│   │   │   │   └── ...            
+│   │   │   ├── task.md         Task/quiz description
+│   │   │   └── task-info.yaml  Task config file
+│   │   ├── programmingTask/    An example of a programming task
+│   │   │   ├── src/            Task sources
+│   │   │   │   └── ...            
+│   │   │   ├── test/           Task tests
+│   │   │   │   └── ...  
+│   │   │   ├── task.md         Task description
+│   │   │   └── task-info.yaml  Task config file
 │   │   └── lesson-info.yaml    Lesson config file
 │   ├── courseFrameworkLesson/  An example if the course framework lesson
 │   │   ├── ...                 Several examples of lessons
