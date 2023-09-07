@@ -96,7 +96,7 @@ A generated JetBrains Academy Kotlin Course Template repository contains the fol
 │           ├── kotlin/         Kotlin production sources
 │           └── resources/      Resources - images, icons
 ├── courseSection/              An example of the course section 
-│   ├── courseLesson/           An example if the course lesson
+│   ├── courseLesson/           An example of the course lesson
 │   │   ├── theoryTask/         An example of a theory task
 │   │   │   ├── src/            Task sources
 │   │   │   │   └── ...            
