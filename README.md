@@ -115,7 +115,7 @@ A generated JetBrains Academy Kotlin Course Template repository contains the fol
 │   │   │   ├── task.md         Task description
 │   │   │   └── task-info.yaml  Task config file
 │   │   └── lesson-info.yaml    Lesson config file
-│   ├── courseFrameworkLesson/  An example if the course framework lesson
+│   ├── courseFrameworkLesson/  An example of the course framework lesson
 │   │   ├── ...                 Several examples of lessons
 │   │   └── lesson-info.yaml    Lesson config file
 │   └── section-info.yaml       Section config file
