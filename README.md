@@ -51,11 +51,8 @@ All you have to do is click the <kbd>Use this template</kbd> button (you must be
 The most convenient way for getting your new project from GitHub is the <kbd>Get from VCS</kbd> action available on the Welcome Screen, 
 where you can filter your GitHub  repository by its name.
 
-**TODO: add picture**
+![Use this template][file:use-this-template.png]
 
-The next step, after opening your course in IntelliJ IDEA, is to set the proper <kbd>SDK</kbd> to Java in version `17` within the Project Structure settings.
-
-**TODO: add picture**
 
 For the last step, you have to manually review the configuration variables described in the [`gradle.properties`][file:gradle.properties] file and *optionally* move sources from the *org.jetbrains.academy.kotlin.template* package to the one that works best for you.
 Then you can get to work implementing your ideas.
@@ -167,17 +164,22 @@ about creating a course archive and uploading it to the marketplace in the [Cour
 
 The prepared template provides an example of a course with one section, two lessons and five tasks in total.
 
-**TODO: add picture**
+![Course structure in the course creator mode][file:course-structure-author]
 
 Each course might have unlimited number of sections, lessons, and tasks. 
 Students will see almost the same course structure as the educator (course author):
 
-**TODO: add picture**
+![Course structure in the course student mode][file:course-structure-student]
 
 The main difference is in framework lessons, that display 
 only task files without intermediate steps.
 
 You can read more about framework lessons in the official documentation in the [Framework Lessons Creation][ref:framework.lessons.creation] section.
+
+> **Note**
+>
+> Click the <kbd>Course Creator</kbd> -> <kbd>Create Course Preview</kbd> in the context menu on the root of the repository to create a course preview.
+
 
 The JetBrains Academy plugin provides five different types of tasks, 
 you can combine them inside one lesson (a regular or a framework one).
@@ -204,11 +206,12 @@ More examples of usage the [Kotlin test framework][ref:kotlin.test.framework] ca
 
 Within the default project structure, there is a `.run` directory provided containing predefined *Run/Debug configurations* that expose corresponding Gradle tasks:
 
-**TODO: add picture**
+![Run/Debug configurations][file:run-debug-configurations]
 
-| Configuration name       | Description                                                          |
-|--------------------------|----------------------------------------------------------------------|
-| Build course with detekt | Runs `:build` Gradle task with [Detekt][ref:detekt] static analysis. |
+| Configuration name       | Description                                                                    |
+|--------------------------|--------------------------------------------------------------------------------|
+| Build course             | Runs `:build` Gradle task only with tests.                                     |
+| Build course with detekt | Runs `:build` Gradle task with tests and [Detekt][ref:detekt] static analysis. |
 
 ## Continuous integration
 
@@ -261,3 +264,8 @@ In the `.github/workflows` directory, you can find definitions for the following
 [gradle]: https://gradle.org
 
 [semver]: https://semver.org
+
+[file:use-this-template.png]: ./readme/get-from-version-control.png
+[file:course-structure-author]: ./readme/course-structure-author.png
+[file:course-structure-student]: ./readme/course-structure-student.png
+[file:run-debug-configurations]: ./readme/run-debug-configurations.png
