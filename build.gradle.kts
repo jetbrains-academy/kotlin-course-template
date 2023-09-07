@@ -12,17 +12,6 @@ plugins {
     id("io.gitlab.arturbosch.detekt") version "1.23.1"
 }
 
-// TODO: check
-fun printOutput(output: Any): Task {
-    return tasks.create("printOutput") {
-        println("#educational_plugin_check(er_version 1")
-        val lines = output.toString().split("(?<=\n)|(?=\n)")
-        for (line in lines) {
-            println("#educational_plugin$line")
-        }
-    }
-}
-
 val detektReportMerge by tasks.registering(io.gitlab.arturbosch.detekt.report.ReportMergeTask::class) {
     output.set(rootProject.buildDir.resolve("reports/detekt/merge.sarif"))
 }
