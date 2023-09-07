@@ -62,8 +62,10 @@ Then you can get to work implementing your ideas.
 The recommended method for Kotlin course development involves using the [Gradle][gradle] setup.
 
 A course built using the JetBrains Academy Kotlin course template includes a Gradle configuration already set up.
-
-**TODO: add details**
+This gradle file sets up all base dependencies and plugins for the course. 
+For each gradle module (each task in the course and extra modules like `common` as well) 
+it includes [JUnit5][ref:junit5] tests, [Kotlin test framework][ref:kotlin.test.framework], and [Detekt][ref:detekt]. 
+It also marks the `source` and `test` folders as source- and test- source sets in the project.
 
 ### Gradle properties
 
@@ -145,8 +147,6 @@ content:
 environment_settings:
   jvm_language_level: JDK_17
 ```
-
-**TODO: add a link to a more detailed information**
 
 ## Course ignore file
 
@@ -247,6 +247,7 @@ In the `.github/workflows` directory, you can find definitions for the following
 [ref:kotlin.test.framework]: https://github.com/jetbrains-academy/kotlin-test-framework
 [ref:java.reflection.api]: https://docs.oracle.com/javase/8/docs/technotes/guides/reflection/index.html
 [ref:detekt]: https://github.com/detekt/detekt
+[ref:junit5]: https://junit.org/junit5/
 
 [ref:kotlin.onboarding.introduction.marketplace]: https://plugins.jetbrains.com/plugin/21067-kotlin-onboarding-introduction
 [ref:kotlin.onboarding.introduction.github]: https://github.com/jetbrains-academy/kotlin-onboarding-introduction
