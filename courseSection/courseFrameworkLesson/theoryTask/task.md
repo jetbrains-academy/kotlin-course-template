@@ -16,3 +16,12 @@ you can put them into the `common` module:
     <img src="../../../common/src/main/resources/images/logo.png" alt="Logo" width="400"/>
 </p>
 
+<div class="hint" title="How to change pictures between themes?">
+
+You can put picture for the dark theme together with the initial one with the suffix "_dark". 
+In this case the plugin will use this picture if the user switched the IDE theme to the dark one:
+
+<p align="center">
+    <img src="../../../common/src/main/resources/images/theme_example.gif" alt="Logo" width="500"/>
+</p>
+</div>

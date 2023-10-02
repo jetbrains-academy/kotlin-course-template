@@ -46,7 +46,7 @@ This allows you to create a new repository easily without copying and pasting pr
 
 All you have to do is click the <kbd>Use this template</kbd> button (you must be logged in with your GitHub account).
 
-**TODO: add picture**
+![Use this template][file:use-template-blur]
 
 The most convenient way for getting your new project from GitHub is the <kbd>Get from VCS</kbd> action available on the Welcome Screen, 
 where you can filter your GitHub  repository by its name.
@@ -270,3 +270,4 @@ In the `.github/workflows` directory, you can find definitions for the following
 [file:course-structure-author]: common/src/main/resources/images/course-structure-author.png
 [file:course-structure-student]: common/src/main/resources/images/course-structure-student.png
 [file:run-debug-configurations]: common/src/main/resources/images/run-debug-configurations.png
+[file:use-template-blur]: common/src/main/resources/images/use_template_blur.jpg
