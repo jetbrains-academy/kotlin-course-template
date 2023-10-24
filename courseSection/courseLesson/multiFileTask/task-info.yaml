@@ -1,0 +1,18 @@
+type: output
+files:
+  - name: src/MainTaskFile.kt
+    visible: true
+    placeholders:
+      - offset: 25
+        length: 24
+        placeholder_text: TODO("Not implemented yet")
+  - name: src/Main.kt
+    visible: true
+    placeholders:
+      - offset: 17
+        length: 12
+        placeholder_text: // invoke the implemented functions here
+  - name: test/output.txt
+    visible: false
+  - name: test/input.txt
+    visible: false

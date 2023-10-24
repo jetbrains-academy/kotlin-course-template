@@ -155,6 +155,7 @@ It provides the list of files or directories that will be ignored in the final c
 
 ```text
 README.md
+/.run
 ```
 
 You can find more information about the course preview in the [Course preview][ref:course.preview] section. Information 
