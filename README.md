@@ -5,8 +5,7 @@
 [![Gradle Build With Detekt](https://github.com/jetbrains-academy/kotlin-course-template/actions/workflows/gradle-build-with-detekt.yml/badge.svg)](https://github.com/jetbrains-academy/kotlin-course-template/actions/workflows/gradle-build-with-detekt.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **Note**
->
+> ![NOTE]
 > Click the <kbd>Use this template</kbd> button and clone it in IntelliJ IDEA.
 
 **JetBrains Academy Kotlin course template** is a repository that provides a 
@@ -20,8 +19,7 @@ linking to the proper documentation pages, and keeping everything organized.
 
 If you're still not quite sure what this is all about, read our introduction: [What is the JetBrains Academy plugin?][docs:intro]
 
-> **Note**
->
+> ![NOTE]
 > Click the <kbd>Watch</kbd> button on the top to be notified about releases containing new features and fixes.
 
 ### Table of contents
@@ -33,6 +31,7 @@ In this README, we will highlight the following elements of template-project cre
 - [Course info configuration file](#course-info-configuration-file)
 - [Course ignore file](#course-ignore-file)
 - [Sample code](#sample-code)
+- [Adapted inspections](#adapted-inspections)
 - [Testing](#testing)
 - [Predefined Run/Debug configurations](#predefined-rundebug-configurations)
 - [Continuous integration](#continuous-integration)
@@ -84,51 +83,56 @@ A generated JetBrains Academy Kotlin Course Template repository contains the fol
 
 ```
 .
-├── .github/                    GitHub Actions workflows
-├── .run/                       Predefined Run/Debug Configurations
-├── build/                      Output build directory
-├── gradle
-│   └── wrapper/                Gradle Wrapper
-├── common                      Course sources common for all sections
-│   └── src
-│       └── main
-│           ├── kotlin/         Kotlin production sources
-│           └── resources/      Resources - images, icons
-├── courseSection/              An example of the course section 
-│   ├── courseLesson/           An example of the course lesson
-│   │   ├── theoryTask/         An example of a theory task
-│   │   │   ├── src/            Task sources
-│   │   │   │   └── ...            
-│   │   │   ├── task.md         Task/theory description
-│   │   │   └── task-info.yaml  Task config file
-│   │   ├── quizTask/           An example of a quiz task
-│   │   │   ├── src/            Task sources
-│   │   │   │   └── ...            
-│   │   │   ├── task.md         Task/quiz description
-│   │   │   └── task-info.yaml  Task config file
-│   │   ├── programmingTask/    An example of a programming task
-│   │   │   ├── src/            Task sources
-│   │   │   │   └── ...            
-│   │   │   ├── test/           Task tests
-│   │   │   │   └── ...  
-│   │   │   ├── task.md         Task description
-│   │   │   └── task-info.yaml  Task config file
-│   │   └── lesson-info.yaml    Lesson config file
-│   ├── courseFrameworkLesson/  An example of the course framework lesson
-│   │   ├── ...                 Several examples of lessons
-│   │   └── lesson-info.yaml    Lesson config file
-│   └── section-info.yaml       Section config file
-├── .courseignore               Course ignoring rules
-├── .gitignore                  Git ignoring rules
-├── build.gradle.kts            Gradle configuration
-├── course-info.yaml            Course info configuration file
-├── detekt.yml                  Detekt configuration file
-├── gradle.properties           Gradle configuration properties
-├── gradlew                     *nix Gradle Wrapper script
-├── gradlew.bat                 Windows Gradle Wrapper script
-├── LICENSE                     License, MIT by default
-├── README.md                   README
-└── settings.gradle.kts         Gradle project settings
+├── .github/                        GitHub Actions workflows
+├── .idea/
+│   └── inspectionProfiles/         Adapted inspection files
+│       ├── Custom_Inspections.xml  Inspection config
+│       ├── profiles_settings.xml   Inspection profile settings
+│       └── README.md               Inspection descriptions
+├── .run/                           Predefined Run/Debug Configurations
+├── build/                          Output build directory
+├── gradle                          
+│   └── wrapper/                    Gradle Wrapper
+├── common                          Course sources common for all sections
+│   └── src                         
+│       └── main                    
+│           ├── kotlin/             Kotlin production sources
+│           └── resources/          Resources - images, icons
+├── courseSection/                  An example of the course section 
+│   ├── courseLesson/               An example of the course lesson
+│   │   ├── theoryTask/             An example of a theory task
+│   │   │   ├── src/                Task sources
+│   │   │   │   └── ...             
+│   │   │   ├── task.md             Task/theory description
+│   │   │   └── task-info.yaml      Task config file
+│   │   ├── quizTask/               An example of a quiz task
+│   │   │   ├── src/                Task sources
+│   │   │   │   └── ...             
+│   │   │   ├── task.md             Task/quiz description
+│   │   │   └── task-info.yaml      Task config file
+│   │   ├── programmingTask/        An example of a programming task
+│   │   │   ├── src/                Task sources
+│   │   │   │   └── ...             
+│   │   │   ├── test/               Task tests
+│   │   │   │   └── ...             
+│   │   │   ├── task.md             Task description
+│   │   │   └── task-info.yaml      Task config file
+│   │   └── lesson-info.yaml        Lesson config file
+│   ├── courseFrameworkLesson/      An example of the course framework lesson
+│   │   ├── ...                     Several examples of lessons
+│   │   └── lesson-info.yaml        Lesson config file
+│   └── section-info.yaml           Section config file
+├── .courseignore                   Course ignoring rules
+├── .gitignore                      Git ignoring rules
+├── build.gradle.kts                Gradle configuration
+├── course-info.yaml                Course info configuration file
+├── detekt.yml                      Detekt configuration file
+├── gradle.properties               Gradle configuration properties
+├── gradlew                         *nix Gradle Wrapper script
+├── gradlew.bat                     Windows Gradle Wrapper script
+├── LICENSE                         License, MIT by default
+├── README.md                       README
+└── settings.gradle.kts             Gradle project settings
 ```
 
 ## Course info configuration file
@@ -177,14 +181,20 @@ only task files, without intermediate steps.
 
 You can read more about framework lessons in the official documentation in the [Framework Lessons Creation][ref:framework.lessons.creation] section.
 
-> **Note**
->
+> [!NOTE]
 > Click <kbd>Course Creator</kbd> -> <kbd>Create Course Preview</kbd> in the context menu in the root of the repository to create a course preview.
 
 
 The JetBrains Academy plugin provides five different types of tasks, 
 and you can combine them inside one lesson (whether regular or framework).
 You can read more about tasks in the official documentation in the [Task][ref:tasks] section.
+
+## Adapted inspections
+The template also includes adapted Kotlin inspections in order to provide better learning experience.
+This means that the IDE will highlight the most popular code issue that students encounter.
+To learn more about the inspections please refer to [this][file:inspections.readme] README file.
+
+If you don't want to use this inspections, then just delete the [inspectionProfiles][file:inspections] folder.
 
 ## Testing
 
@@ -262,6 +272,8 @@ In the `.github/workflows` directory, you can find definitions for the following
 [file:courseignore]: .courseignore
 [file:course.lesson.tests]: ./courseSection/courseLesson/programmingTask/test/Tests.kt
 [file:course.framework.lesson.tests]: ./courseSection/courseFrameworkLesson/programmingTask/test/Tests.kt
+[file:inspections]: ./.idea/inspectionProfiles
+[file:inspections.readme]: ./.idea/inspectionProfiles/README.md
 
 [gradle]: https://gradle.org
 
