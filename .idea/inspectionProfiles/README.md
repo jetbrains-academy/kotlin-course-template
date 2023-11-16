@@ -1,11 +1,12 @@
 # Inspection descriptions
-This README file contains descriptions of all inspections in the [config](./Custom_Inspections.xml) file.
+This README file contains descriptions of all adapted inspections in the [config](./Custom_Inspections.xml) file.
 
-> [!NOTE]  
-> This file, as well as the config file, contains only the most common inspections, that have been adapted for better teaching experience.
-> For a complete list of inspections available in the IntelliJ platform, see the Kotlin Inspections tab (Settings -> Editor -> Inspections -> Kotlin).
+> [!NOTE]
+> This file, as well as the config file, contains only the most common inspections, that have been adapted for better learning experience.
+> For a complete list of inspections available in the IntelliJ platform, see the Kotlin Inspections tab (<kbd>Settings</kbd> -> <kbd>Editor</kbd> -> <kbd>Inspections</kbd> -> <kbd>Kotlin</kbd>).
 
 The `Severity` field (`level` in the config file) indicates how the inspections will be displayed in the upper right corner of the editor and in the Problems tab. Some of the possible values are:
+
 | Name         | Config name  | Example                                                                                                                                             |
 |--------------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | Error        | ERROR        | <img width="30" alt="image" src="https://github.com/jetbrains-academy/kotlin-course-template/assets/55441714/6d9c1a07-b4ac-418e-88cd-15c02d14c77d"> |
@@ -13,16 +14,16 @@ The `Severity` field (`level` in the config file) indicates how the inspections 
 | Weak Warning | WEAK WARNING | <img width="30" alt="image" src="https://github.com/jetbrains-academy/kotlin-course-template/assets/55441714/2d8d6606-1ab5-4e14-86f9-1d4278a973a1"> |
 
 The `Highlighting` field (`editorAttributes` in the config file) indicates how the inspection will be highlighted in the IDE. Some of the possible values are:
-| Name          | Config name                   | Example                                                                                                                                             |
-|---------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+
+| Name          | Config name                   | Example                                                                                                                                              |
+|---------------|-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Error         | ERRORS_ATTRIBUTES             | <img height="33" alt="image" src="https://github.com/jetbrains-academy/kotlin-course-template/assets/55441714/6c80ba5f-fef6-4787-9d02-e5c9f35c30a4"> |
 | Warning       | WARNING_ATTRIBUTES            | <img height="33" alt="image" src="https://github.com/jetbrains-academy/kotlin-course-template/assets/55441714/e3a04c4a-2a82-43c9-9025-9213876a25e4"> |
 | Weak Warning  | INFO_ATTRIBUTES               | <img height="33" alt="image" src="https://github.com/jetbrains-academy/kotlin-course-template/assets/55441714/3ceaa4fd-0f60-4928-beee-1e367faf1670"> |
 | Strikethrough | MARKED_FOR_REMOVAL_ATTRIBUTES | <img height="33" alt="image" src="https://github.com/jetbrains-academy/kotlin-course-template/assets/55441714/cf6e6d08-202b-43ff-96ab-a69138fb1370"> |
 
 > [!NOTE]  
-> To add a new inspection to the config file please use the Kotlin Inspections tab
-> where you could turn on/off an inspection and choose its severity and/or highlighting.
+> To alter the config file please use the Kotlin Inspections tab where you could turn on/off inspections and choose theirs severity and/or highlighting.
 
 ## AddOperatorModifier
 
