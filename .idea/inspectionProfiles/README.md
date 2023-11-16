@@ -25,6 +25,8 @@ The `Highlighting` field (`editorAttributes` in the config file) indicates how t
 > [!NOTE]  
 > To alter the config file please use the Kotlin Inspections tab where you could turn on/off inspections and choose theirs severity and/or highlighting.
 
+Below are detailed descriptions of all the inspections in the current configuration file.
+
 ## AddOperatorModifier
 
 **Severity**: Weak Warning </br>
