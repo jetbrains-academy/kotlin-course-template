@@ -5,6 +5,7 @@ build/
 !**/src/test/**/build/
 
 .idea
+!.idea/inspectionProfiles/
 *.iws
 *.iml
 *.ipr
