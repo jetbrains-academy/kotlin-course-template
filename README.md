@@ -5,7 +5,8 @@
 [![Gradle Build With Detekt](https://github.com/jetbrains-academy/kotlin-course-template/actions/workflows/gradle-build-with-detekt.yml/badge.svg)](https://github.com/jetbrains-academy/kotlin-course-template/actions/workflows/gradle-build-with-detekt.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> ![NOTE]
+> **Note**
+> 
 > Click the <kbd>Use this template</kbd> button and clone it in IntelliJ IDEA.
 
 **JetBrains Academy Kotlin course template** is a repository that provides a 
@@ -19,7 +20,8 @@ linking to the proper documentation pages, and keeping everything organized.
 
 If you're still not quite sure what this is all about, read our introduction: [What is the JetBrains Academy plugin?][docs:intro]
 
-> ![NOTE]
+> **Note**
+> 
 > Click the <kbd>Watch</kbd> button on the top to be notified about releases containing new features and fixes.
 
 ### Table of contents
@@ -181,7 +183,8 @@ only task files, without intermediate steps.
 
 You can read more about framework lessons in the official documentation in the [Framework Lessons Creation][ref:framework.lessons.creation] section.
 
-> [!NOTE]
+> **Note**
+> 
 > Click <kbd>Course Creator</kbd> -> <kbd>Create Course Preview</kbd> in the context menu in the root of the repository to create a course preview.
 
 
