@@ -5,7 +5,7 @@
 [![Gradle Build With Detekt](https://github.com/jetbrains-academy/kotlin-course-template/actions/workflows/gradle-build-with-detekt.yml/badge.svg)](https://github.com/jetbrains-academy/kotlin-course-template/actions/workflows/gradle-build-with-detekt.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> ![NOTE]
+> [!NOTE]
 > Click the <kbd>Use this template</kbd> button and clone it in IntelliJ IDEA.
 
 **JetBrains Academy Kotlin course template** is a repository that provides a 
@@ -19,7 +19,7 @@ linking to the proper documentation pages, and keeping everything organized.
 
 If you're still not quite sure what this is all about, read our introduction: [What is the JetBrains Academy plugin?][docs:intro]
 
-> ![NOTE]
+> [!NOTE]
 > Click the <kbd>Watch</kbd> button on the top to be notified about releases containing new features and fixes.
 
 ### Table of contents
