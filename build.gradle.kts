@@ -7,7 +7,7 @@ version = gradleProperties("courseVersion").get()
 
 plugins {
     java
-    val kotlinVersion = "1.9.0"
+    val kotlinVersion = "2.1.0"
     id("org.jetbrains.kotlin.jvm") version kotlinVersion apply false
     id("io.gitlab.arturbosch.detekt") version "1.23.1"
 }
