@@ -4,3 +4,4 @@ files:
     visible: true
   - name: src/org/jetbrains/academy/kotlin/template/InvisibleFile.kt
     visible: false
+    propagatable: false

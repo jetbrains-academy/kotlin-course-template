@@ -11,7 +11,7 @@ files:
         placeholder_text: TODO("Write your solution here")
       - offset: 193
         length: 133
-        placeholder_text:  // Write your solution here
+        placeholder_text: // Write your solution here
   - name: src/main/kotlin/org/jetbrains/academy/kotlin/template/InvisibleFile.kt
     visible: false
   - name: test/InvokeSayHelloFunction.kt

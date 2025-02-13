@@ -1,9 +1,38 @@
 type: marketplace
 title: JetBrains Academy Kotlin course template
 language: English
-summary: "Here you can put the course description. You can use HTML tags inside the description."
+summary: Here you can put the course description. You can use HTML tags inside the
+  description.
 programming_language: Kotlin
 content:
   - courseSection
 environment_settings:
   jvm_language_level: JDK_17
+additional_files:
+  - name: .idea/inspectionProfiles/profiles_settings.xml
+  - name: .idea/inspectionProfiles/Custom_Inspections.xml
+  - name: common/src/main/kotlin/org/jetbrains/academy/kotlin/template/CourseUtils.kt
+  - name: common/src/main/resources/images/logo.png
+    is_binary: true
+  - name: common/src/main/resources/images/logo_dark.png
+    is_binary: true
+  - name: common/src/main/resources/images/files-order.gif
+    is_binary: true
+  - name: common/src/main/resources/images/theme_example.gif
+    is_binary: true
+  - name: common/src/main/resources/images/use_template_blur.jpg
+    is_binary: true
+  - name: common/src/main/resources/images/course-structure-author.png
+    is_binary: true
+  - name: common/src/main/resources/images/course-structure-student.png
+    is_binary: true
+  - name: common/src/main/resources/images/get-from-version-control.png
+    is_binary: true
+  - name: common/src/main/resources/images/run-debug-configurations.png
+    is_binary: true
+  - name: common/build.gradle.kts
+  - name: detekt.yml
+  - name: build.gradle.kts
+  - name: gradle.properties
+  - name: settings.gradle.kts
+yaml_version: 2
