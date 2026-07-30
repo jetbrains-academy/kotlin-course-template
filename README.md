@@ -6,25 +6,25 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > [!NOTE]
-> Click the <kbd>Use this template</kbd> button and clone it in IntelliJ IDEA.
+> Click the <kbd>Use this template</kbd> button and clone the project in IntelliJ IDEA.
 
-**JetBrains Academy Kotlin course template** is a repository that provides a 
-pure template to make it easier to create a new Kotlin course with the [JetBrains Academy
-plugin][ref:plugin.marketplace] (check out the [Creating a repository from a template][gh:template] article).
+**JetBrains Academy Kotlin course template** is a starter repository designed 
+to make it easy to create new Kotlin courses using the [JetBrains Academy
+plugin][ref:plugin.marketplace] (see the [Creating a repository from a template][gh:template] article).
 
 The main goal of this template is to speed up the setup phase 
-of Kotlin course development for both new and experienced educators 
-by preconfiguring the project scaffold and CI, 
-linking to the proper documentation pages, and keeping everything organized.
+of Kotlin course development for both new and experienced educators. 
+It preconfigures the project scaffold and CI, 
+links to relevant documentation, and keeps everything organized.
 
-If you're still not quite sure what this is all about, read our introduction: [What is the JetBrains Academy plugin?][docs:intro]
+If you aren't sure what this project is about, read our introduction: [What is the JetBrains Academy plugin?][docs:intro]
 
 > [!NOTE]
-> Click the <kbd>Watch</kbd> button on the top to be notified about releases containing new features and fixes.
+> Click the <kbd>Watch</kbd> button at the top of the page to receive notifications about new releases, features, and bug fixes.
 
 ### Table of contents
 
-In this README, we will highlight the following elements of template-project creation:
+In this README, we cover the following aspects of template-project setup:
  
 - [Getting started](#getting-started)
 - [Gradle configuration](#gradle-configuration)
@@ -39,36 +39,36 @@ In this README, we will highlight the following elements of template-project cre
 
 ## Getting started
 
-Before we dive into course development and everything related to it, it's worth mentioning the benefits of using GitHub Templates.
-By creating a new project with the current template, you start with no history or reference to this repository.
-This allows you to create a new repository easily, without copying and pasting previous content, cloning repositories, or clearing the history manually.
+Before diving into course development, note the benefits of using GitHub Templates:
+when you create a new repository from this template, it starts fresh with no commit history or direct references to the source repository.
+You don't need to copy-paste files, clone repositories, or manually clear history.
 
-All you need to do is click the <kbd>Use this template</kbd> button (you must be logged in with your GitHub account).
+All you need to do is click the <kbd>Use this template</kbd> button (ensure you are logged in to your GitHub account).
 
 ![Use this template][file:use-template-blur]
 
-The most convenient way of getting your new project from GitHub is the <kbd>Get from VCS</kbd> action available on the Welcome Screen, 
-where you can filter your GitHub  repository by its name.
+The easiest way to open your new project from GitHub is via the <kbd>Get from VCS</kbd> action on the Welcome Screen, 
+where you can filter repositories by name.
 
 ![Use this template][file:use-this-template.png]
 
 
-As the last step, you need to manually review the configuration variables described in the [`gradle.properties`][file:gradle.properties] file and *optionally* move sources from the *org.jetbrains.academy.kotlin.template* package to the one that works best for you.
-Then you can get to work and implement your ideas.
+As a final step, review the configuration variables in [`gradle.properties`][file:gradle.properties]. *Optionally*, move the sources from the *org.jetbrains.academy.kotlin.template* package to one that works best for you.
+Then, you can get to work and implement your ideas.
 
 ## Gradle configuration
 
-The recommended method for Kotlin course development involves using the [Gradle][gradle] setup.
+We recommend using [Gradle][gradle] for Kotlin course development.
 
-A course built using the JetBrains Academy Kotlin course template includes a Gradle configuration already set up.
-This gradle file sets up all base dependencies and plugins for the course. 
-For each gradle module (each task in the course and extra modules like `common` as well) 
-it includes [JUnit5][ref:junit5] tests, [Kotlin test framework][ref:kotlin.test.framework], and [Detekt][ref:detekt]. 
-It also marks the `source` and `test` folders as source- and test- source sets in the project.
+Courses created with this template come with a preconfigured Gradle build setup
+that handles base dependencies and plugins. 
+For each Gradle module (including individual tasks and shared modules like `common`), 
+it configures [JUnit5][ref:junit5] tests, [Kotlin test framework][ref:kotlin.test.framework], and [Detekt][ref:detekt] static analysis. 
+It also correctly registers `source` and `test` folders as source and test-source sets in the project.
 
 ### Gradle properties
 
-The project-specific configuration file [`gradle.properties`][file:gradle.properties] contains:
+The project configuration file [`gradle.properties`][file:gradle.properties] contains:
 
 | Property name       | Description                                                   |
 |---------------------|---------------------------------------------------------------|
@@ -79,7 +79,7 @@ The project-specific configuration file [`gradle.properties`][file:gradle.proper
 
 ## Course template structure
 
-A generated JetBrains Academy Kotlin Course Template repository contains the following content structure:
+A generated JetBrains Academy Kotlin Course repository uses the following folder layout:
 
 ```
 .
@@ -89,7 +89,7 @@ A generated JetBrains Academy Kotlin Course Template repository contains the fol
 │       ├── Custom_Inspections.xml  Inspection config
 │       ├── profiles_settings.xml   Inspection profile settings
 │       └── README.md               Inspection descriptions
-├── .run/                           Predefined Run/Debug Configurations
+├── .run/                           Predefined Run/Debug configurations
 ├── build/                          Output build directory
 ├── gradle                          
 │   └── wrapper/                    Gradle Wrapper
@@ -97,10 +97,10 @@ A generated JetBrains Academy Kotlin Course Template repository contains the fol
 │   └── src                         
 │       └── main                    
 │           ├── kotlin/             Kotlin production sources
-│           └── resources/          Resources - images, icons
-├── courseSection/                  An example of the course section 
-│   ├── courseLesson/               An example of the course lesson
-│   │   ├── theoryTask/             An example of a theory task
+│           └── resources/          Resources (images, icons)
+├── courseSection/                  Example course section 
+│   ├── courseLesson/               Example course lesson
+│   │   ├── theoryTask/             Theory task example
 │   │   │   ├── src/                Task sources
 │   │   │   │   └── ...             
 │   │   │   ├── task.md             Task/theory description
@@ -110,7 +110,7 @@ A generated JetBrains Academy Kotlin Course Template repository contains the fol
 │   │   │   │   └── ...             
 │   │   │   ├── task.md             Task/quiz description
 │   │   │   └── task-info.yaml      Task config file
-│   │   ├── programmingTask/        An example of a programming task
+│   │   ├── programmingTask/        Programming task example
 │   │   │   ├── src/                Task sources
 │   │   │   │   └── ...             
 │   │   │   ├── test/               Task tests
@@ -118,27 +118,27 @@ A generated JetBrains Academy Kotlin Course Template repository contains the fol
 │   │   │   ├── task.md             Task description
 │   │   │   └── task-info.yaml      Task config file
 │   │   └── lesson-info.yaml        Lesson config file
-│   ├── courseFrameworkLesson/      An example of the course framework lesson
-│   │   ├── ...                     Several examples of lessons
+│   ├── courseFrameworkLesson/      Framework lesson example
+│   │   ├── ...                     Several lesson examples
 │   │   └── lesson-info.yaml        Lesson config file
 │   └── section-info.yaml           Section config file
-├── .courseignore                   Course ignoring rules
-├── .gitignore                      Git ignoring rules
+├── .courseignore                   Course ignore rules
+├── .gitignore                      Git ignore rules
 ├── build.gradle.kts                Gradle configuration
 ├── course-info.yaml                Course info configuration file
 ├── detekt.yml                      Detekt configuration file
 ├── gradle.properties               Gradle configuration properties
 ├── gradlew                         *nix Gradle Wrapper script
 ├── gradlew.bat                     Windows Gradle Wrapper script
-├── LICENSE                         License, MIT by default
+├── LICENSE                         License (MIT by default)
 ├── README.md                       README
 └── settings.gradle.kts             Gradle project settings
 ```
 
 ## Course info configuration file
 
-The course info configuration file is the [course-info.yaml][file:course-info.yaml] file located in the root directory.
-It provides general information about the course, like description, language, etc.
+General course metadata (title, language, description, etc.) is configured in the root [course-info.yaml][file:course-info.yaml] file.
+
 
 ```yaml
 type: marketplace
@@ -154,88 +154,88 @@ environment_settings:
 
 ## Course ignore file
 
-The course ignore file is the [.courseignore][file:courseignore] file located in the root directory.
-It provides the list of files or directories that will be ignored in the final course preview or archive.
+The [.courseignore][file:courseignore] file in the root directory
+specifies files and directories that should be excluded from the general course preview or final distributed archive.
 
 ```text
 README.md
 /.run
 ```
 
-You can find more information about the course preview in the [Course preview][ref:course.preview] section. Information 
-about creating a course archive and uploading it to the marketplace is in the [Course distribution][ref:course.distribution] section.
+For more details on course previews and distribution, see the documentation for [Course preview][ref:course.preview] 
+and [Course distribution][ref:course.distribution].
 
 ## Sample code
 
-The prepared template provides an example of a course with one section, two lessons, and five tasks in total.
+This template includes a sample course containing one section, two lessons, and five tasks.
 
 ![Course structure in the course creator mode][file:course-structure-author]
 
-Each course may have an unlimited number of sections, lessons, and tasks. 
-Students will see almost the same course structure as the educator (course author):
+You can create an arbitrary number of sections, lessons, and tasks. 
+Students see a similar view to the creator mode:
 
 ![Course structure in the course student mode][file:course-structure-student]
 
-The main difference is in framework lessons, which display 
-only task files, without intermediate steps.
+The primary difference lies in framework lessons, where students see 
+only task files without intermediate steps.
 
-You can read more about framework lessons in the official documentation in the [Framework Lessons Creation][ref:framework.lessons.creation] section.
+Learn more about framework lessons in the [Framework Lessons Creation][ref:framework.lessons.creation] section.
 
 > [!NOTE]
-> Click <kbd>Course Creator</kbd> -> <kbd>Create Course Preview</kbd> in the context menu in the root of the repository to create a course preview.
+> Right-click the root folder and select <kbd>Course Creator</kbd> -> <kbd>Create Course Preview</kbd> to generate a course preview.
 
 
-The JetBrains Academy plugin provides five different types of tasks, 
-and you can combine them inside one lesson (whether regular or framework).
-You can read more about tasks in the official documentation in the [Task][ref:tasks] section.
+The JetBrains Academy plugin supports five distinct task types, 
+which can be combined within any lesson (whether regular or framework).
+See the [Task][ref:tasks] documentation for details.
 
 ## Adapted inspections
-The template also includes adapted Kotlin inspections in order to provide better learning experience.
-This means that the IDE will highlight the most popular code issue that students encounter.
-To learn more about the inspections please refer to [this][file:inspections.readme] README file.
+The template includes preconfigured IDE inspection settings tailored for learning Kotlin.
+They highlight common mistakes that students frequently encounter.
+Read [this][file:inspections.readme] README file for details.
 
-If you don't want to use this inspections, then just delete the [inspectionProfiles][file:inspections] folder.
+If you prefer not to use these inspections, simply delete the [inspectionProfiles][file:inspections] folder.
 
 ## Testing
 
-To check the programming exercises for [**edu**][ref:tasks] tasks, you need to write tests. 
-This repository includes a [Kotlin test framework][ref:kotlin.test.framework] to make the testing process easier.
-It contains functionality to test student solutions by using the [Java Reflection API][ref:java.reflection.api] under the hood.
-This approach allows you to call students' functions that do not exist yet.
-It is a powerful mechanism that enables you to create excesses without predefined classes or function 
-templates and check their signature and behaviour properly.
+To validate student solutions for programming exercises ([**edu**][ref:tasks] tasks), you need to write tests. 
+This repository includes the [Kotlin test framework][ref:kotlin.test.framework] to simplify test creation.
+Using the [Java Reflection API][ref:java.reflection.api] under the hood,
+the framework allows tests to invoke functions and classes that students have not yet written.
+This makes it possible to design exercises without predefined classes or function 
+templates, while still properly verifying signatures and behaviour.
 
-You can find little examples of programming tasks in the repository in the `Tests.kt` files:
-in [course lesson][file:course.lesson.tests] and [course framework lesson][file:course.framework.lesson.tests].
+Sample tests can be found in `Tests.kt` files
+within both the [course lesson][file:course.lesson.tests] and [course framework lesson][file:course.framework.lesson.tests].
 
-More examples of using the [Kotlin test framework][ref:kotlin.test.framework] can be found in other Kotlin courses:
+For additional examples of using the [Kotlin test framework][ref:kotlin.test.framework], explore these Kotlin courses:
 
 - [Kotlin Onboarding: Introduction][ref:kotlin.onboarding.introduction.marketplace] on [GitHub][ref:kotlin.onboarding.introduction.github]
 - [Kotlin Onboarding: Object-Oriented programming][ref:kotlin.onboarding.oop.marketplace] on [GitHub][ref:kotlin.onboarding.oop.github]
 
 ## Predefined Run/Debug configurations
 
-Within the default project structure, there is a `.run` directory provided, which contains predefined *Run/Debug configurations* that expose corresponding Gradle tasks:
+The repository includes a `.run` directory containing predefined *Run/Debug configurations* mapped to Gradle tasks:
 
 ![Run/Debug configurations][file:run-debug-configurations]
 
 | Configuration name       | Description                                                                    |
 |--------------------------|--------------------------------------------------------------------------------|
-| Build course             | Runs `:build` Gradle task with tests only.                                     |
-| Build course with detekt | Runs `:build` Gradle task with tests and [Detekt][ref:detekt] static analysis. |
+| Build course             | Runs the `:build` Gradle task with tests only.                                 |
+| Build course with detekt | Runs the `:build` task, tests, and [Detekt][ref:detekt] static analysis.       |
 
 ## Continuous integration
 
-Continuous integration depends on [GitHub Actions][gh:actions], a set of workflows that make it possible to automate your testing and release process.
-Thanks to such automation, you can delegate the testing and verification phases to the Continuous Integration (CI) and instead focus on development (and writing more tests).
+Continuous integration is handled via [GitHub Actions][gh:actions], automating testing and code verification
+so you can focus on authoring content and writing tests.
 
-In the `.github/workflows` directory, you can find definitions for the following GitHub Actions workflows:
+In the `.github/workflows` directory, you can find the definitions for the following GitHub Actions workflows:
 - [Build](.github/workflows/gradle-build.yml)
   - Builds your course
-  - Runs all tests for all tasks
+  - Runs all task tests
 - [Build with Detekt](.github/workflows/gradle-build-with-detekt.yml)
   - Builds your course
-  - Runs all tests for all tasks
+  - Runs all task tests
   - Runs [Detekt][ref:detekt] checks
 
 ## Useful links
