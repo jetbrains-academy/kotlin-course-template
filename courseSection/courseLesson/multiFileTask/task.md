@@ -1,8 +1,8 @@
 This is an example of an input/output task. 
-In this type of task, you can give an expected input and output to the program instead of implementing 
-your own tests.
+In this task type, you can specify the expected input and output for the program instead of writing 
+custom tests.
 
-This task also demonstrates how you can set up which file should be opened in the student mode if the task has several files.
-You just need to put this file as the first file in the `task-info.yaml` config, e.g. in this task the `MainTaskFile.kt` will be opened: 
+This task also demonstrates how to control which file opens by default in student mode when a task contains multiple files.
+Simply place the desired file first in the task's `task-info.yaml` configuration file. For example, in this task, `MainTaskFile.kt` opens first: 
 
 ![Expected behaviour](../../../common/src/main/resources/images/files-order.gif)
