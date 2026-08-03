@@ -2,10 +2,10 @@
 This README file contains descriptions of all adapted inspections in the [config](./Custom_Inspections.xml) file.
 
 > [!NOTE]
-> This file, as well as the config file, contains only the most common inspections, that have been adapted for better learning experience.
+> This file, as well as the config file, contains only the most common inspections that have been adapted for a better learning experience.
 > For a complete list of inspections available in the IntelliJ platform, see the Kotlin Inspections tab (<kbd>Settings</kbd> -> <kbd>Editor</kbd> -> <kbd>Inspections</kbd> -> <kbd>Kotlin</kbd>).
 
-The `Severity` field (`level` in the config file) indicates how the inspections will be displayed in the upper right corner of the editor and in the Problems tab. Some of the possible values are:
+The `Severity` field (`level` in the config file) indicates how inspections will be displayed in the top-right corner of the editor and in the **Problems** tab. Some of the possible values are:
 
 | Name         | Config name  | Example                                                                                                                                             |
 |--------------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -23,9 +23,9 @@ The `Highlighting` field (`editorAttributes` in the config file) indicates how t
 | Strikethrough | MARKED_FOR_REMOVAL_ATTRIBUTES | <img height="33" alt="image" src="https://github.com/jetbrains-academy/kotlin-course-template/assets/55441714/cf6e6d08-202b-43ff-96ab-a69138fb1370"> |
 
 > [!NOTE]  
-> To alter the config file please use the Kotlin Inspections tab where you could turn on/off inspections and choose theirs severity and/or highlighting.
+> To alter the config file, use the IDE **Kotlin Inspections** settings tab, where you can enable/disable inspections and choose theirs severity and highlighting styles.
 
-Below are detailed descriptions of all the inspections in the current configuration file.
+Below are detailed descriptions of all inspections included in the current configuration file.
 
 ## AddOperatorModifier
 
@@ -35,8 +35,8 @@ Below are detailed descriptions of all the inspections in the current configurat
 <details>
 <summary>Function should have 'operator' modifier</summary>
 
-Reports a function that matches one of the operator conventions but lacks the `operator` keyword.
-By adding the `operator` modifier, you might allow function consumers to write idiomatic Kotlin code.
+Reports a function that matches one of the Kotlin operator conventions but lacks the `operator` keyword.
+Adding the `operator` modifier allows function consumers to write idiomatic Kotlin code.
 
 **Example:**
 
@@ -51,7 +51,7 @@ fun usage(a: Complex, b: Complex) {
 }
 ```
 
-The quick-fix adds the `operator` modifier keyword:
+Applying the quick-fix adds the `operator` modifier keyword:
 
 ```kotlin
 class Complex(val real: Double, val imaginary: Double) {
@@ -91,7 +91,7 @@ fun usage(box: Box<String>) {
 }
 ```
 
-The quick-fix adds the matching variance modifier:
+Applying the quick-fix adds the matching variance modifier:
 
 ```kotlin
 class Box<out T>(val obj: T)
@@ -115,10 +115,10 @@ fun usage(box: Box<String>) ++{
 <details>
 <summary>Constructor parameter is never used as a property</summary>
 
-Reports primary constructor parameters that can have `val` or `var` removed.
+Reports primary constructor parameters where `val` or `var` can be safely removed.
 
 Class properties declared in the constructor increase memory consumption.
-If the parameter value is only used in the constructor, you can omit them.
+If the parameter value is only used in the constructor, you can omit the property declaration.
 
 Note that the referenced object might be garbage-collected earlier.
 
@@ -132,7 +132,7 @@ class Task(val name: String) {
 }
 ```
 
-The quick-fix removes the extra `val` or `var` keyword:
+Applying the quick-fix removes the redundant `val` or `var` keyword:
 
 ```kotlin
 class Task(name: String) {
@@ -153,7 +153,7 @@ class Task(name: String) {
 <summary>Property is explicitly assigned to constructor parameter</summary>
 
 Reports properties that are explicitly assigned to primary constructor parameters.
-Properties can be declared directly in the primary constructor, reducing the amount of code and increasing code readability.
+Declaring properties directly inside the primary constructor reduces boilerplate code and improves readability.
 
 **Example:**
 
@@ -163,7 +163,7 @@ class User(name: String) {
 }
 ```
 
-The quick-fix joins the parameter and property declaration into a primary constructor parameter:
+Applying the quick-fix consolidates the parameter and property declaration into a primary constructor parameter:
 
 ```kotlin
 class User(val name: String) {
@@ -180,8 +180,8 @@ class User(val name: String) {
 <details>
 <summary>Local 'var' is never modified and can be declared as 'val'</summary>
 
-Reports local variables declared with the `var` keyword that are never modified.
-Kotlin encourages to declare practically immutable variables using the `val` keyword, ensuring that their value will never change.
+Reports local variables declared with `var` that are never modified.
+Kotlin encourages declaring immutable variables using the `val` keyword to ensure their value cannot change.
 
 **Example:**
 
@@ -193,7 +193,7 @@ fun example() {
 }
 ```
 
-The quick-fix replaces the `var` keyword with `val`:
+Applying the quick-fix replaces the `var` keyword with `val`:
 
 ```kotlin
 fun example() {
@@ -213,7 +213,7 @@ fun example() {
 <details>
 <summary>Cascade 'if' can be replaced with 'when'</summary>
 
-Reports `if` statements with three or more branches that can be replaced with the `when` expression.
+Reports `if` statements with three or more branches that can be simplified into a `when` expression.
 **Example:**
 
 ```kotlin
@@ -231,7 +231,7 @@ fun checkIdentifier(id: String) {
 }
 ```
 
-The quick-fix converts the `if` expression to `when`:
+Applying the quick-fix converts the `if` cascade to a `when` expression:
 
 ```kotlin
 fun checkIdentifier(id: String) {
@@ -262,11 +262,11 @@ fun checkIdentifier(id: String) {
 <details>
 <summary>Class naming convention</summary>
 
-Reports class names that do not follow the recommended naming conventions.
+Reports class names that do not follow recommended naming conventions.
 
 Consistent naming allows for easier code reading and understanding.
-According to the [Kotlin official style guide](https://kotlinlang.org/docs/coding-conventions.html#naming-rules),
-class names should start with an uppercase letter and use camel case.
+According to the [official Kotlin Style Guide](https://kotlinlang.org/docs/coding-conventions.html#naming-rules),
+class names should start with an uppercase letter and use CamelCase.
 
 It is possible to introduce other naming rules by changing the "Pattern" regular expression.
 
@@ -276,7 +276,7 @@ It is possible to introduce other naming rules by changing the "Pattern" regular
 class user(val name: String)
 ```
 
-The quick-fix renames the class according to the Kotlin naming conventions:
+Applying the quick-fix renames the class according to the Kotlin naming conventions:
 
 ```kotlin
 class User(val name: String)
@@ -292,10 +292,10 @@ class User(val name: String)
 <details>
 <summary>Control flow with empty body</summary>
 
-Reports `if`, `while`, `do` or `for` statements with empty bodies.
-While occasionally intended, this construction is confusing and often the result of a typo.
+Reports `if`, `while`, `do`, or `for` statements with empty bodies.
+While occasionally intentional, this construction is confusing and often results from a typo.
 
-The quick-fix removes a statement.
+Applying the quick-fix removes the redundant statement.
 
 **Example:**
 
@@ -313,8 +313,8 @@ if (a > b) {}
 <details>
 <summary>Can be replaced with function reference</summary>
 
-Reports function literal expressions that can be replaced with function references.
-Replacing lambdas with function references often makes code look more concise and understandable.
+Reports function literal expressions that can be replaced with a function reference.
+Replacing lambdas with function references often makes code more concise and understandable.
 
 **Example:**
 
@@ -327,7 +327,7 @@ fun example() {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun Int.isEven() = this % 2 == 0
@@ -348,7 +348,7 @@ fun example() {
 <details>
 <summary>Convert Pair constructor to 'to' function</summary>
 
-Reports a `Pair` constructor invocation that can be replaced with a `to()` infix function call.
+Reports `Pair` constructor invocations that can be replaced with the `to()` infix function.
 
 Explicit constructor invocations may add verbosity, especially if they are used multiple times.
 Replacing constructor calls with `to()` makes code easier to read and maintain.
@@ -363,7 +363,7 @@ val countries = mapOf(
 )
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 val countries = mapOf(
@@ -383,10 +383,10 @@ val countries = mapOf(
 <details>
 <summary>Can be replaced with lambda</summary>
 
-Reports a function reference expression that can be replaced with a function literal (lambda).
+Reports function reference expressions that can be replaced with a function literal (lambda).
 
-Sometimes, passing a lambda looks more straightforward and more consistent with the rest of the code.
-Also, the fix might be handy if you need to replace a simple call with something more complex.
+Sometimes, passing a lambda may be more straightforward and more consistent with the rest of the code,
+especially when complex logic is added later.
 
 **Example:**
 
@@ -399,7 +399,7 @@ fun example() {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun Int.isEven() = this % 2 == 0
@@ -420,8 +420,8 @@ fun example() {
 <details>
 <summary>Two comparisons should be converted to a range check</summary>
 
-Reports two consecutive comparisons that can be converted to a range check.
-Checking against a range makes code simpler by removing test subject duplication.
+Reports two consecutive comparisons that can be converted into a range check.
+Checking against a range simplifies code by removing test subject duplication.
 
 **Example:**
 
@@ -431,7 +431,7 @@ fun checkMonth(month: Int): Boolean {
 }
 ```
 
-The quick-fix replaces the comparison-based check with a range one:
+Applying the quick-fix replaces the comparison with a range check:
 
 ```kotlin
 fun checkMonth(month: Int): Boolean {
@@ -463,7 +463,7 @@ fun foo(list: List<My>) {
 }
 ```
 
-The quick-fix destructures the declaration and introduces new variables with names from the corresponding class:
+Applying the quick-fix destructures the declaration and introduces new variables named after the corresponding class:
 
 ```kotlin
 data class My(val first: String, val second: Int, val third: Boolean)
@@ -486,7 +486,7 @@ fun foo(list: List<My>) {
 <details>
 <summary>Redundant explicit 'this'</summary>
 
-Reports an explicit `this` when it can be omitted.
+Reports explicit usages of `this` where the qualification is redundant and can be omitted.
 **Example:**
 
 ```kotlin
@@ -496,7 +496,7 @@ class C {
 }
 ```
 
-The quick-fix removes the redundant `this`:
+Applying the quick-fix removes the redundant `this`:
 
 ```kotlin
 class C {
@@ -522,7 +522,7 @@ Reports `forEach` loops that do not use iterable values.
 listOf(1, 2, 3).forEach { }
 ```
 
-The quick fix introduces anonymous parameter in the `forEach` section:
+Applying the quick-fix introduces an anonymous parameter in the `forEach` section:
 
 ```kotlin
 listOf(1, 2, 3).forEach { _ -> }
@@ -538,14 +538,14 @@ listOf(1, 2, 3).forEach { _ -> }
 <details>
 <summary>Function naming convention</summary>
 
-Reports function names that do not follow the recommended naming conventions.
+Reports function names that do not follow recommended naming conventions.
 **Example:**
 
 ```kotlin
 fun Foo() {}
 ```
 
-To fix the problem change the name of the function to match the recommended naming conventions.
+To fix the problem, rename the function to match the recommended naming conventions.
 
 </details>
 
@@ -566,7 +566,7 @@ To prevent unexpected errors, the type should be declared explicitly.
 fun foo() = java.lang.String.valueOf(1)
 ```
 
-The quick fix allows you to specify the return type:
+Applying the quick-fix allows you to specify the return type:
 
 ```kotlin
 fun foo(): String = java.lang.String.valueOf(1)
@@ -582,7 +582,7 @@ fun foo(): String = java.lang.String.valueOf(1)
 <details>
 <summary>Implicit 'this'</summary>
 
-Reports usages of implicit **this**.
+Reports implicit references to **this**.
 **Example:**
 
 ```kotlin
@@ -595,7 +595,7 @@ class Foo {
 }
 ```
 
-The quick fix specifies **this** explicitly:
+Applying the quick-fix specifies **this** explicitly:
 
 ```kotlin
 class Foo {
@@ -617,7 +617,7 @@ class Foo {
 <details>
 <summary>Incomplete destructuring declaration</summary>
 
-Reports incomplete destructuring declaration.
+Reports incomplete destructuring declarations.
 **Example:**
 
 ```kotlin
@@ -626,7 +626,7 @@ val person = Person("", 0)
 val (name) = person
 ```
 
-The quick fix completes destructuring declaration with new variables:
+Applying the quick-fix completes the destructuring declaration with new variables:
 
 ```kotlin
 data class Person(val name: String, val age: Int)
@@ -642,9 +642,9 @@ val (name, age) = person
 **Highlighting**: Warning </br>
 
 <details>
-<summary>when' that can be simplified by introducing an argument</summary>
+<summary>'when' that can be simplified by introducing an argument</summary>
 
-Reports a `when` expression that can be simplified by introducing a subject argument.
+Reports `when` expressions that can be simplified by introducing a subject argument.
 **Example:**
 
 ```kotlin
@@ -657,7 +657,7 @@ fun test(obj: Any): String {
 }
 ```
 
-The quick fix introduces a subject argument:
+Applying the quick-fix introduces a subject argument:
 
 ```kotlin
 fun test(obj: Any): String {
@@ -687,7 +687,7 @@ val x: String
 x = System.getProperty("")
 ```
 
-The quick fix joins the declaration with the assignment:
+Applying the quick fix joins the declaration with the assignment:
 
 ```kotlin
 val x = System.getProperty("")
@@ -695,10 +695,10 @@ val x = System.getProperty("")
 
 Configure the inspection:
 
-You can disable the option **Report with complex initialization of member properties** to skip properties with complex initialization. This covers two cases:
+You can disable **Report with complex initialization of member properties** to skip properties with complex initialization. This covers two cases:
 
-1. The property initializer is complex (it is a multiline or a compound/control-flow expression)
-2. The property is first initialized and then immediately used in subsequent code (for example, to call additional initialization methods)
+1. The property initializer is complex (it is a multiline or a compound/control-flow expression).
+2. The property is first initialized and then immediately referenced in subsequent code (for example, to call additional initialization methods).
 
 </details>
 
@@ -720,7 +720,7 @@ Reports unresolved references in KDoc comments.
 fun foo() {}
 ```
 
-To fix the problem make the link valid.
+To fix the problem, make the link valid.
 
 </details>
 
@@ -732,9 +732,9 @@ To fix the problem make the link valid.
 <details>
 <summary>Constant conditions</summary>
 
-Reports non-trivial conditions and values that are statically known to be always true, false, null or zero.
-While sometimes intended, often this is a sign of logical error in the program. Additionally,
-reports never reachable `when` branches and some expressions that are statically known to fail always.
+Reports non-trivial conditions and values that statically evaluate to `true`, `false`, `null`, or `zero`.
+While sometimes intentional, this often indicates a logical error in the program. Additionally,
+it reports unreachable `when` branches and expressions that are statically guaranteed to fail.
 Examples:
 
 ```kotlin
@@ -755,7 +755,7 @@ fun process(v: Any) {
 }
 ```
 
-Uncheck the "Warn when constant is stored in variable" option to avoid reporting of variables having constant values not in conditions.
+Uncheck "Warn when constant is stored in variable" to avoid reporting variables with constant values outside of conditions.
 
 New in 2021.3
 
@@ -771,9 +771,9 @@ New in 2021.3
 
 Reports obsolete language features and unnecessarily verbose code constructs during the code cleanup operation (**Code | Code Cleanup**).
 
-The quick-fix automatically replaces usages of obsolete language features or unnecessarily verbose code constructs with compact and up-to-date syntax.
+Applying the quick-fix automatically updates obsolete language features or unnecessarily verbose code constructs.
 
-It also replaces deprecated symbols with their proposed substitutions.
+It also replaces deprecated symbols with recommended alternatives.
 
 </details>
 
@@ -783,9 +783,9 @@ It also replaces deprecated symbols with their proposed substitutions.
 **Highlighting**: Error </br>
 
 <details>
-<summary>equals()' between objects of inconvertible types</summary>
+<summary>'equals()' between objects of inconvertible types</summary>
 
-Reports calls to `equals()` where the receiver and the argument are
+Reports calls to `equals()` where receiver and argument are
 of incompatible primitive, enum, or string types.
 
 While such a call might theoretically be useful, most likely it represents a bug.
@@ -847,7 +847,7 @@ fun foo(list: ArrayList<String>) {
 <summary>Return or assignment can be lifted out</summary>
 
 Reports `if`, `when`, and `try` statements that can be converted to expressions
-by lifting the `return` statement or an assignment out.
+by lifting the `return` statement or assignments out.
 **Example:**
 
 ```kotlin
@@ -860,7 +860,7 @@ fun foo(arg: Int): String {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun foo(arg: Int): String {
@@ -884,10 +884,10 @@ If you would like this inspection to highlight more complex code with multi-stat
 <details>
 <summary>Local variable naming convention</summary>
 
-Reports local variables that do not follow the naming conventions.
+Reports local variables that do not follow the recommended naming conventions.
 You can specify the required pattern in the inspection options.
 
-[Recommended naming conventions](https://kotlinlang.org/docs/coding-conventions.html#function-names): it has to start with a lowercase letter, use camel case and no underscores.
+[Recommended naming conventions](https://kotlinlang.org/docs/coding-conventions.html#function-names): it has to start with a lowercase letter, use CamelCase and no underscores.
 
 **Example:**
 
@@ -899,7 +899,7 @@ fun fibonacciNumber(index: Int): Long = when(index) {
         var number_one: Long = 0
         // does not follow naming conventions: starts with an uppercase letter
         var NUMBER_TWO: Long = 1
-        // follow naming conventions: starts with a lowercase letter, use camel case and no underscores.
+        // follows naming conventions: starts with a lowercase letter, uses camel case and no underscores.
         var numberThree: Long = number_one + NUMBER_TWO
 
         for(currentIndex in 2..index) {
@@ -922,7 +922,7 @@ fun fibonacciNumber(index: Int): Long = when(index) {
 <details>
 <summary>Loop can be replaced with stdlib operations</summary>
 
-Reports `for` loops that can be replaced with a sequence of stdlib operations (like `map`, `filter`, and so on).
+Reports `for` loops that can be replaced with a sequence of stdlib operations (`map`, `filter`, etc.).
 **Example:**
 
 ```kotlin
@@ -936,7 +936,7 @@ fun foo(list: List<String>): List<Int> {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun foo(list: List<String>): List<Int> {
@@ -957,7 +957,7 @@ fun foo(list: List<String>): List<Int> {
 <details>
 <summary>Might be 'const'</summary>
 
-Reports top-level `val` properties in objects that might be declared as `const`
+Reports top-level `val` properties in objects that can be declared as `const`
 for better performance and Java interoperability.
 **Example:**
 
@@ -967,7 +967,7 @@ object A {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 object A {
@@ -994,7 +994,7 @@ class Service(val url: String) {
 }
 ```
 
-After the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):
+After applying the quick-fix (considering there are no usages of `url` outside of the `Service` class):
 
 ```kotlin
 class Service(private val url: String) {
@@ -1028,7 +1028,7 @@ fun foo(x: Int): Int {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun foo(x: Int): Int {
@@ -1063,7 +1063,7 @@ fun foo(listOfLists: List<List<String>>) {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun foo(listOfLists: List<List<String>>) {
@@ -1088,7 +1088,7 @@ fun foo(listOfLists: List<List<String>>) {
 Reports private property names that do not follow the recommended naming conventions.
 
 Consistent naming allows for easier code reading and understanding.
-According to the [Kotlin official style guide](https://kotlinlang.org/docs/coding-conventions.html#naming-rules),
+According to the [official Kotlin Style Guide](https://kotlinlang.org/docs/coding-conventions.html#naming-rules),
 private property names should start with a lowercase letter and use camel case.
 Optionally, underscore prefix is allowed but only for **private** properties.
 
@@ -1100,7 +1100,7 @@ It is possible to introduce other naming rules by changing the "Pattern" regular
 val _My_Cool_Property = ""
 ```
 
-The quick-fix renames the class according to the Kotlin naming conventions:
+Applying the quick-fix renames the class according to the Kotlin naming conventions:
 
 ```kotlin
 val _myCoolProperty = ""
@@ -1117,7 +1117,7 @@ val _myCoolProperty = ""
 <summary>Public API declaration with implicit return type</summary>
 
 Reports `public` and `protected` functions and properties that have an implicit return type.
-For API stability reasons, it's recommended to specify such types explicitly.
+Explicit types are required for API stability.
 
 **Example:**
 
@@ -1126,7 +1126,7 @@ fun publicFunctionWhichAbusesTypeInference() =
     otherFunctionWithNotObviousReturnType() ?: yetAnotherFunctionWithNotObviousReturnType()
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun publicFunctionWhichAbusesTypeInference(): **Api** =
@@ -1143,7 +1143,7 @@ fun publicFunctionWhichAbusesTypeInference(): **Api** =
 <details>
 <summary>Redundant 'else' in 'if'</summary>
 
-Reports redundant `else` in `if` with `return`
+Reports redundant `else` in `if` with `return`.
 
 **Example:**
 
@@ -1156,7 +1156,7 @@ fun foo(arg: Boolean): Int {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun foo(arg: Boolean): Int {
@@ -1175,7 +1175,7 @@ fun foo(arg: Boolean): Int {
 <details>
 <summary>Obvious explicit type</summary>
 
-Reports local variables' explicitly given types which are obvious and thus redundant, like `val f: Foo = Foo()`.
+Reports local variable explicit type declarations that are obvious and thus redundant, like `val f: Foo = Foo()`.
 
 **Example:**
 
@@ -1189,7 +1189,7 @@ fun foo() {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 class Point(val x: Int, val y: Int)
@@ -1211,7 +1211,7 @@ fun foo() {
 <details>
 <summary>Redundant 'if' statement</summary>
 
-Reports `if` statements which can be simplified to a single statement.
+Reports `if` statements that can be simplified to a single statement.
 
 **Example:**
 
@@ -1225,7 +1225,7 @@ fun test(): Boolean {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun test(): Boolean {
@@ -1243,14 +1243,14 @@ fun test(): Boolean {
 <details>
 <summary>Redundant nullable return type</summary>
 
-Reports functions and variables with nullable return type which never return or become `null`.
+Reports functions and variables with nullable return types that never return or become `null`.
 **Example:**
 
 ```kotlin
 fun greeting(user: String): String? = "Hello, $user!"
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun greeting(user: String): String = "Hello, $user!"
@@ -1269,7 +1269,7 @@ fun greeting(user: String): String = "Hello, $user!"
 Reports redundant semicolons (`;`) that can be safely removed.
 
 Kotlin does not require a semicolon at the end of each statement or expression.
-The quick-fix is suggested to remove redundant semicolons.
+The quick-fix removes redundant semicolons.
 
 **Example:**
 
@@ -1278,7 +1278,7 @@ val myMap = mapOf("one" to 1, "two" to 2);
 myMap.forEach { (key, value) ->  print("$key -> $value")};
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 val myMap = mapOf("one" to 1, "two" to 2)
@@ -1293,7 +1293,7 @@ There are two cases though where a semicolon is required:
 map.forEach { val (key, value) = it; println("$key -> $value") }
 ```
 
-2. `enum` classes that also declare properties or functions, require a semicolon after the list of enum constants:
+2. `enum` classes that also declare properties or functions require a semicolon after the list of `enum` constants:
 
 ```kotlin
 enum class Mode {
@@ -1313,7 +1313,7 @@ enum class Mode {
 <details>
 <summary>Redundant visibility modifier</summary>
 
-Reports visibility modifiers that match the default visibility of an element
+Reports visibility modifiers that match the default visibility
 (`public` for most elements, `protected` for members that override a protected member).
 
 </details>
@@ -1326,7 +1326,7 @@ Reports visibility modifiers that match the default visibility of an element
 <details>
 <summary>Redundant curly braces in string template</summary>
 
-Reports usages of curly braces in string templates around simple identifiers.
+Reports curly braces in string templates wrapping simple identifiers.
 Use the 'Remove curly braces' quick-fix to remove the redundant braces.
 
 **Examples:**
@@ -1343,7 +1343,7 @@ fun correctUsage() {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun redundant() {
@@ -1367,7 +1367,7 @@ fun correctUsage() {
 <details>
 <summary>Unnecessary parentheses in function call with lambda</summary>
 
-Reports redundant empty parentheses of function calls where the only parameter is a lambda that's outside the parentheses.
+Reports redundant empty parentheses in function calls where the sole parameter is a lambda that's outside the parentheses.
 Use the 'Remove unnecessary parentheses from function call with lambda' quick-fix to clean up the code.
 
 **Examples:**
@@ -1378,7 +1378,7 @@ fun foo() {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun foo() {
@@ -1435,7 +1435,7 @@ fun foo(): MutableList<String> = mutableListOf<String>()
 fun bar() = mutableListOf<String>()
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun foo(): MutableList<String> = mutableListOf() <== Updated
@@ -1466,7 +1466,7 @@ fun foo(bar: List<String>) {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun foo(bar: List<String>) {
@@ -1486,7 +1486,7 @@ fun foo(bar: List<String>) {
 <details>
 <summary>Redundant call of conversion method</summary>
 
-Reports redundant calls to conversion methods (for example, `toString()` on a `String` or `toDouble()`
+Reports redundant calls to conversion methods (e.g., calling `toString()` on a `String` instance or `toDouble()`
 on a `Double`).
 Use the 'Remove redundant calls of the conversion method' quick-fix to clean up the code.
 
@@ -1503,7 +1503,7 @@ Use the 'Remove redundant calls of the conversion method' quick-fix to clean up 
 Reports redundant qualifiers (or their parts) on class names, functions, and properties.
 
 A fully qualified name is an unambiguous identifier that specifies which object, function, or property a call refers to.
-In the contexts where the name can be shortened, the inspection informs on the opportunity and the associated
+In the contexts where the name can be shortened, the inspection informs on the opportunity, and the associated
 'Remove redundant qualifier name' quick-fix allows amending the code.
 
 **Examples:**
@@ -1516,12 +1516,12 @@ class Foo
 
 fun main() {
     val a = my.simple.name.Foo()    // 'Foo' resides in the declared 'my.simple.name' package, qualifier is redundant
-    val b = kotlin.Int.MAX_VALUE    // Can be replaced with 'MAX_VALUE' since it's imported
-    val c = kotlin.Double.MAX_VALUE // Can be replaced with 'Double.MAX_VALUE' since built-in types are imported automatically
+    val b = kotlin.Int.MAX_VALUE    // Can be replaced with 'MAX_VALUE', since it's imported
+    val c = kotlin.Double.MAX_VALUE // Can be replaced with 'Double.MAX_VALUE', since built-in types are imported automatically
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 package my.simple.name
@@ -1554,7 +1554,7 @@ val x = "Hello"
 val y = "$x"
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 val x = "Hello"
@@ -1582,7 +1582,7 @@ fun test(): String {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun foo(a: Int, b: Int) = a + b
@@ -1611,7 +1611,7 @@ fun test(): Boolean {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun test(): Boolean {
@@ -1633,7 +1633,7 @@ Reports calls to `Collection<T>.count()`.
 
 This function call can be replaced with `.size`.
 
-`.size` form ensures that the operation is O(1) and won't allocate extra objects, whereas
+`.size` ensures that the operation is O(1) and won't allocate extra objects, whereas
 `count()` could be confused with `Iterable<T>.count()`, which is O(n) and allocating.
 
 **Example:**
@@ -1645,7 +1645,7 @@ fun foo() {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun foo() {
@@ -1664,10 +1664,10 @@ fun foo() {
 <details>
 <summary>Explicit 'get' or 'set' call</summary>
 
-Reports explicit calls to `get` or `set` functions which can be replaced by an indexing operator `[]`.
+Reports explicit calls to `get` or `set` functions that can be replaced by an indexing operator `[]`.
 
-Kotlin allows custom implementations for the predefined set of operators on types.
-To overload an operator, you can mark the corresponding function with the `operator` modifier:
+Kotlin supports custom implementations for a predefined set of operators on your types.
+To overload an operator, mark the corresponding function with the `operator` modifier:
 
 ```kotlin
 operator fun get(index: Int) {}
@@ -1688,7 +1688,7 @@ fun test() {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 class Test {
@@ -1719,7 +1719,7 @@ fun test(foo: Int?) {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun test(foo: Int?) {
@@ -1737,10 +1737,10 @@ fun test(foo: Int?) {
 <details>
 <summary>Range can be converted to indices or iteration</summary>
 
-Reports `until` and `rangeTo` operators that can be replaced with `Collection.indices` or iteration over collection inside `for` loop.
-Using syntactic sugar makes your code simpler.
+Reports `until` and `rangeTo` operators that can be replaced with `Collection.indices` or direct collection iteration inside a `for` loop.
+Using syntactic sugar makes your code cleaner.
 
-The quick-fix replaces the manual range with the corresponding construction.
+The quick-fix replaces the manual range with the corresponding construct.
 
 **Example:**
 
@@ -1752,7 +1752,7 @@ fun main(args: Array<String>) {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun main(args: Array<String>) {
@@ -1770,9 +1770,9 @@ fun main(args: Array<String>) {
 **Highlighting**: Warning </br>
 
 <details>
-<summary>rangeTo' or the '..' call should be replaced with 'until'</summary>
+<summary>'rangeTo' or the '..' call should be replaced with 'until'</summary>
 
-Reports calls to `rangeTo` or the `..` operator instead of calls to `until`.
+Reports calls to `rangeTo` or the `..` operator instead of using `until`.
 Using corresponding functions makes your code simpler.
 
 The quick-fix replaces `rangeTo` or the `..` call with `until`.
@@ -1787,7 +1787,7 @@ fun foo(a: Int) {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun foo(a: Int) {
@@ -1805,7 +1805,7 @@ fun foo(a: Int) {
 **Highlighting**: Strikethrough </br>
 
 <details>
-<summary>readLine' can be replaced with 'readln' or 'readlnOrNull'</summary>
+<summary>'readLine' can be replaced with 'readln' or 'readlnOrNull'</summary>
 
 Reports calls to `readLine()` that can be replaced with `readln()` or `readlnOrNull()`.
 
@@ -1820,7 +1820,7 @@ val x = readLine()!!
 val y = readLine()?.length
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 val x = readln()
@@ -1837,7 +1837,7 @@ val y = readlnOrNull()?.length
 <details>
 <summary>Size check can be replaced with 'isNotEmpty()'</summary>
 
-Reports size checks of `Collections/Array/String` that should be replaced with `isNotEmpty()`.
+Reports `Collection/Array/String` size checks that can be replaced with `isNotEmpty()`.
 Using `isNotEmpty()` makes your code simpler.
 
 The quick-fix replaces the size check with `isNotEmpty()`.
@@ -1851,7 +1851,7 @@ fun foo() {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun foo() {
@@ -1870,7 +1870,7 @@ fun foo() {
 <details>
 <summary>Size zero check can be replaced with 'isEmpty()'</summary>
 
-Reports `size == 0` checks on `Collections/Array/String` that should be replaced with `isEmpty()`.
+Reports `size == 0` checks on `Collections/Arrays/Strings` that can be replaced with `isEmpty()`.
 Using `isEmpty()` makes your code simpler.
 
 The quick-fix replaces the size check with `isEmpty()`.
@@ -1884,7 +1884,7 @@ fun foo() {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun foo() {
@@ -1901,7 +1901,7 @@ fun foo() {
 **Highlighting**: Strikethrough </br>
 
 <details>
-<summary>substring' call should be replaced with 'take' call</summary>
+<summary>'substring' call should be replaced with 'take' call</summary>
 
 Reports calls like `s.substring(0, x)` that can be replaced with `s.take(x)`.
 Using `take()` makes your code simpler.
@@ -1916,7 +1916,7 @@ fun foo(s: String) {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun foo(s: String) {
@@ -1948,7 +1948,7 @@ fun test(): String {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun test(): String {
@@ -1967,7 +1967,7 @@ fun test(): String {
 <details>
 <summary>Assignment can be replaced with operator assignment</summary>
 
-Reports modifications of variables with a simple assignment (such as `y = y + x`) that can be replaced with an operator assignment.
+Reports variable re-assignments (such as `y = y + x`) that can be replaced with an operator assignment.
 The quick-fix replaces the assignment with an assignment operator.
 
 **Example:**
@@ -1979,7 +1979,7 @@ fun foo() {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun foo() {
@@ -1998,10 +1998,10 @@ fun foo() {
 <details>
 <summary>Scope function can be converted to another one</summary>
 
-Reports scope functions (`let`, `run`, `apply`, `also`) that can be converted between each other.
-Using corresponding functions makes your code simpler.
+Reports scope functions (`let`, `run`, `apply`, `also`) that can be converted into one another.
+Choosing the most appropriate scope function makes your code cleaner.
 
-The quick-fix replaces the scope function to another one.
+The quick-fix replaces the scope function with another one.
 
 **Example:**
 
@@ -2011,7 +2011,7 @@ val x = "".let {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 val x = "".run {
@@ -2041,7 +2041,7 @@ fun test() {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun test() {
@@ -2060,7 +2060,7 @@ fun test() {
 <summary>Call chain on collection type can be simplified</summary>
 
 Reports two-call chains replaceable by a single call.
-It can help you to avoid redundant code execution.
+It can help you avoid redundant code execution.
 
 The quick-fix replaces the call chain with a single call.
 
@@ -2072,7 +2072,7 @@ fun main() {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun main() {
@@ -2103,7 +2103,7 @@ fun use(arg: Boolean) {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun use(arg: Boolean) {
@@ -2135,10 +2135,10 @@ Reports trailing commas that do not follow the recommended [style guide](https:/
 <details>
 <summary>Unlabeled return inside lambda</summary>
 
-Reports unlabeled `return` expressions inside inline lambda.
-Such expressions can be confusing because it might be unclear which scope belongs to `return`.
+Reports unlabeled `return` expressions inside inline lambdas.
+Such expressions can be confusing because it may be unclear which scope the `return` applies to.
 
-**Change to return@…** quick-fix can be used to amend the code automatically.
+The **Change to return@…** quick-fix can be used to amend the code automatically.
 
 Example:
 
@@ -2152,7 +2152,7 @@ fun test(list: List<Int>) {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun test(list: List<Int>) {
@@ -2172,7 +2172,7 @@ fun test(list: List<Int>) {
 <details>
 <summary>Unnecessary local variable</summary>
 
-Reports local variables that are used only in the very next `return` statement or are exact copies of other variables.
+Reports local variables that are declared only to be immediately returned in the next line or are exact copies of other variables.
 Such variables can be safely inlined to make the code more clear.
 
 **Example:**
@@ -2184,7 +2184,7 @@ fun sum(a: Int, b: Int): Int {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun sum(a: Int, b: Int): Int {
@@ -2194,8 +2194,8 @@ fun sum(a: Int, b: Int): Int {
 
 Configure the inspection:
 
-Use the **Report immediately returned variables** option to report immediately returned variables.
-When given descriptive names, such variables may improve the code readability in some cases, that's why this option is disabled by default.
+Use the **Report immediately returned variables** option to flag variables that are returned right after declaration.
+This option is disabled by default because descriptive variable names can sometimes enhance readability.
 
 </details>
 
@@ -2219,7 +2219,7 @@ Reports unused `equals`(`==`) expressions.
 <details>
 <summary>Unused receiver parameter</summary>
 
-Reports receiver parameter of extension functions and properties that is not used.
+Reports unused extension function/property receiver parameter instances.
 **Remove redundant receiver parameter** can be used to amend the code automatically.
 
 </details>
@@ -2232,10 +2232,10 @@ Reports receiver parameter of extension functions and properties that is not use
 <details>
 <summary>Expression body syntax is preferable here</summary>
 
-Reports `return` expressions (one-liners or `when`) that can be replaced with expression body syntax.
+Reports `return` expressions (such as single-line functions or `when` blocks) that can be replaced with expression body syntax.
 Expression body syntax is recommended by the [style guide](https://kotlinlang.org/docs/coding-conventions.html#functions).
 
-**Convert to expression body** quick-fix can be used to amend the code automatically.
+The **Convert to expression body** quick-fix can be used to amend the code automatically.
 
 Example:
 
@@ -2249,7 +2249,7 @@ fun sign(x: Int): Int {
 }
 ```
 
-After the quick-fix is applied:
+After applying the quick-fix:
 
 ```kotlin
 fun sign(x: Int): Int = when {
@@ -2267,11 +2267,11 @@ fun sign(x: Int): Int = when {
 **Highlighting**: Weak Warning </br>
 
 <details>
-<summary>Unused 'args' on 'main' since 1.4</summary>
+<summary>Unused 'args' on 'main' since Kotlin 1.4</summary>
 
-Reports `main` function with an unused single parameter.
-Since Kotlin 1.4, it is possible to use the `main` function without parameter as the entry point to the Kotlin program.
-The compiler reports a warning for the `main` function with an unused parameter.
+Reports `main` function with a single unused parameter.
+Since Kotlin 1.4, a `main` function without parameters can serve as the entry point for a Kotlin program.
+The compiler reports a warning when the `main` function retains an unused parameter.
 
 </details>
 
