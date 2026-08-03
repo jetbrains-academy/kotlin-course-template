@@ -1,2 +1,2 @@
-You cannot change the question text **Select one option from the list**; you just need to put your question into this file.
-You can set up all quiz options in the [task-info](./task-info.yaml) file.
+You cannot change the default instructional text "**Select one option from the list**"; simply write your question in this file.
+All quiz options can be configured in the [task-info](./task-info.yaml) file.
